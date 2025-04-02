@@ -41,3 +41,25 @@ img {
     -ms-user-select: none;
     user-select: none;
 }
+
+/* 打印时的全局样式覆盖 */
+@media print {
+  /* 去掉 body 背景，确保打印出来的是白底 */
+  body {
+    background: white;
+  }
+  /* 假设你的简历容器使用了类名 "resume"，覆盖它在打印时的固定宽高和其他样式 */
+  .inject-inject-App-with-resume-with-navbar-resume-2 {
+    width: auto !important;
+    height: auto !important;
+    padding: 16mm 11mm !important;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 如果你的 Resume 组件内有分段的部分，可以添加分页控制 */
+  .resume-section {
+    page-break-after: always;
+  }
+}
